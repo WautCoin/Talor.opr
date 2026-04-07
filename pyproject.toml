@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "talor-crm"
+version = "0.1.0"
+description = "WautCoin CRM — Customer Relationship Management for the Talor operator platform"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.scripts]
+crm = "crm.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
