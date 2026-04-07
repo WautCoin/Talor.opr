@@ -21,10 +21,11 @@ import argparse
 import json
 import os
 import sys
+from datetime import datetime, timezone
 from typing import Any, Dict
 
 from .crm import CRM, CRMError
-from .interaction import InteractionType
+from .interaction import Interaction, InteractionType
 
 _DEFAULT_DB = os.environ.get("CRM_DB", "crm_data.json")
 
@@ -51,8 +52,6 @@ def _load(path: str) -> CRM:
         crm._customers[cid].id = c["id"]  # noqa: SLF001
         crm._customers[c["id"]] = crm._customers.pop(cid)
     for ix in data.get("interactions", []):
-        from .interaction import Interaction, InteractionType  # local import
-        from datetime import datetime, timezone
         interaction = Interaction(
             customer_id=ix["customer_id"],
             kind=InteractionType(ix["kind"]),
