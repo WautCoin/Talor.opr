@@ -1,0 +1,2 @@
+[console_scripts]
+batchcoin = batchcoin.__main__:main
