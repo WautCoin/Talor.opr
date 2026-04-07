@@ -14,7 +14,7 @@ class Transaction:
     Attributes:
         sender: Address sending coins.
         recipient: Address receiving coins.
-        amount: Non-negative amount of coins to transfer.
+        amount: Positive amount of coins to transfer.
         tx_id: Unique transaction identifier (auto-generated).
     """
 
