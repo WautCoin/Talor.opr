@@ -41,7 +41,7 @@ class BatchResult:
 
 
 class Batch:
-    """Collects transactions and applies them atomically to a :class:`Ledger`.
+    """Collects transactions and applies them to a :class:`Ledger` in best-effort or atomic mode.
 
     Usage::
 
